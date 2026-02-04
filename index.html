@@ -4,18 +4,49 @@
     <meta charset="UTF-8">
     <title>Feedback Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h2>Feedback Form</h2>
-    <form id="feedbackForm">
-        <label>Name</label><br>
-        <input type="text" id="name" name="name"><br><br>
-        <label>Email</label><br>
-        <input type="email" id="email" name="email"><br><br>
-        <label>Message</label><br>
-        <textarea id="message" name="message"></textarea><br><br>
-        <button type="submit">Submit</button>
-    </form>
+    <div class="container">
+        <header>
+            <h1>Feedback Form</h1>
+            <p class="subtitle">We'd love to hear your thoughts</p>
+        </header>
+
+        <nav class="navigation">
+            <a href="index.html" class="nav-link active">Submit Feedback</a>
+            <a href="feedback.html" class="nav-link">View Feedback</a>
+        </nav>
+
+        <main>
+            <form id="feedbackForm" class="feedback-form">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    <small class="error-message" id="nameError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+                    <small class="error-message" id="emailError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" placeholder="Share your feedback here..." rows="5" required></textarea>
+                    <small class="error-message" id="messageError"></small>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Feedback</button>
+            </form>
+
+            <div id="successMessage" class="success-message" style="display: none;">
+                <strong>Success!</strong> Your feedback has been submitted successfully.
+            </div>
+        </main>
+    </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>

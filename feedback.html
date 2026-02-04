@@ -2,18 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Submitted Feedback</title>
+    <title>View Feedback</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>Submitted Feedback</h1>
+            <p class="subtitle">Browse all feedback submissions</p>
+        </header>
 
-    <h2>Submitted Feedback</h2>
+        <nav class="navigation">
+            <a href="index.html" class="nav-link">Submit Feedback</a>
+            <a href="feedback.html" class="nav-link active">View Feedback</a>
+        </nav>
 
-    <div id="feedbackList"></div>
+        <main>
+            <div id="emptyMessage" class="empty-message">
+                <p>No feedback submitted yet. <a href="index.html">Submit your feedback now!</a></p>
+            </div>
 
-    <div style="margin-top: 20px;">
-        <button id="prevBtn">Previous</button>
-        <button id="nextBtn">Next</button>
+            <div id="feedbackList" class="feedback-list"></div>
+
+            <div id="paginationControls" class="pagination" style="display: none;">
+                <button id="prevBtn" class="pagination-btn">← Previous</button>
+                <span id="pageInfo" class="page-info"></span>
+                <button id="nextBtn" class="pagination-btn">Next →</button>
+            </div>
+        </main>
     </div>
 
     <script src="js/script.js"></script>
